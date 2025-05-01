@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "viktor"
+option go_package = "TerreDHermes.Authorization.v1;Authorizationv1";
 
-service Auth{
-    rpc Register (RegisterRequest) returns (RegisterResponce)
-    rpc Login (LoginRequest) returns (LoginResponce)
-    rpc IsAdmin (IsAdminRequest) returns (IsAdminResponce)
+service Auth {
+    rpc Register (RegisterRequest) returns (RegisterResponce);
+    rpc Login (LoginRequest) returns (LoginResponce);
+    rpc IsAdmin (IsAdminRequest) returns (IsAdminResponce);
 }
 
 message RegisterRequest{
@@ -29,10 +29,10 @@ message LoginResponce{
     string token = 1;
 }
 
-message LoginRequest{
+message IsAdminRequest{
     int64 user_id = 1;
 }
 
-message LoginResponce{
+message IsAdminResponce{
     bool is_admin = 1;
 }
